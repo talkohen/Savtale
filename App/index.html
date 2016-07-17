@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html ng-app= "savtaleApp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/cold.ico">
+    <link rel = "stylesheet" type = "text/css" href= "css/style.css">
+    <link rel="stylesheet" type="text/css" href="js/slick-1.6.0/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="js/slick-1.6.0/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!--Slider for ingredients info !-->
+    <link rel="stylesheet" href="js/bower_components/slick-carousel/slick/slick.css">
+    <script src="js/bower_components/slick-carousel/slick/slick.js"></script>
+    <script src="js/bower_components/angular-slick/dist/slick.js"></script>
+    <!--Filter !-->
+ <script src="js/node_modules/angular-filter/dist/angular-filter.min.js"></script>
+    <title>סבתאלה</title>
+    
+</head>
+<body ng-controller = 'savtaleCtrl'>
+    <header id= "illnessHeader">
+        <div id="coldCover">
+            <section id ="topBar">
+                <section id= "hamburgerMenu">
+                    <button class="hamburger">&#9776;</button>
+                    <button class="cross">&#735;</button>
+                    <h1>סבתאלה</h1>
+                    <a href="search.html"><div id ="searchIcon"></div></a>
+                    <div class="menu">
+                        <ul>
+                            <a href="myOrders.html"><li>ההזמנות שלי</li></a>
+                           <li> <a href="illnessCategories.html"> סוגי מחלות</a></li>
+                            <a href="index.html"><span><li><span>סבתא ממליצה</span></li></span></a>
+                        </ul>
+                    </div> 
+                </section>
+            </section>
+            <section id="illnessName" ng-repeat = "ill in illness">
+                 סבתאלה מזהירה מפני
+                <h2>{{ill.name}}</h2>
+            </section>
+        </div>
+    </header>
+
+    <section id ="goldLine"></section>
+
+        <h4>?מה כדאי לאכול</h4>
+
+
+<slick slides-to-show=1 slides-to-scroll=1 init-onload=true data="ingredients">
+<div ng-repeat = "ingredient in ingredients"  >
+<div class="ingredInfo">
+       
+         <div id="ingredText">
+          <div id="ingredImage" style=" background-image: url({{ingredient.url}});"></div>
+                {{ingredient.desc}}
+         </div>
+    </div>
+     </div>
+</slick>
+    
+</div>
+    <section id="illnessInfo" ng-repeat = "ill in illness"> 
+           {{ill.desc}}
+    </section>
+
+<h4>מה יש לאכול</h4>
+
+    <section id ="meals" >
+        <section id="meal"  ng-repeat = "meal in meals">
+        <a href="meal.html?id={{meal._id}}">
+        <section id="mealImage" style=" background-image: url({{meal.url}});">
+        </section>
+        <section id="mealInfo">
+            {{meal.title}}
+            {{meal.res_name}}
+            {{meal.price}}
+        </section>
+        </section>
+        </a>
+    </section>
+
+    <section id ="mealsCategory" >
+        <section id="meal"  ng-repeat = "meal in meals | unique:'category'" >
+        <a href="mealCategory.html?category={{meal.category}}">
+        <section id="mealImage" style=" background-image: url({{meal.url}});">
+        </section>
+        <section id="mealInfo">
+            {{meal.category}}
+        </section>
+        </section>
+        </a>
+    </section>
+
+
+
+
+    <section id="mealsButton" class="buttonText" ng-click="ShowButtonClicked()"> 
+        למנות נוספות
+    </section>
+
+        <section id="hideButton" class="buttonText" ng-click="hideButtonClicked()"> 
+        הסתר
+    </section>
+
+            <script src="js/slick-1.6.0/slickslick.min.js"></script>
+            <script src = "js/lib/angular/angular.min.js"></script>
+            <script src= "js/savtale.js"></script>
+            <script src= "js/hamburger.js"></script>
+
+
+</body>
+</html>
+

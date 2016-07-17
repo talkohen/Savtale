@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html ng-app= "illnessCatApp">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/cold.ico">
+    <link rel = "stylesheet" type = "text/css" href= "css/style.css">
+    <link rel="stylesheet" type="text/css" href="js/slick-1.6.0/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="js/slick-1.6.0/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+</head>
+<body ng-controller = 'illnessCatCtrl'>
+
+
+<input ng-model="search.name"  placeholder="...חפש מחלה" style="width: 100% ; height: 50px; text-align: right "><br>
+
+  <section id="illnessSearch" ng-repeat="illness in illnesses | filter:search:strict">
+    
+            <a href="illness.html?id={{illness._id}}">
+                <section id="illnessTitle">
+            <td>{{illness.name}}</td>
+        </section>
+        <section id="illnessImage" style=" background-image: url({{illness.url}});">
+
+        </section>
+</a>
+
+  </section>
+
+
+            <script src="js/slick-1.6.0/slickslick.min.js"></script>
+            <script src = "js/lib/angular/angular.min.js"></script>
+            <script src= "js/illnessCategories.js"></script>
+            <script src= "js/hamburger.js"></script>
+</body>
+</html>
+

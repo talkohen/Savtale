@@ -1,0 +1,19 @@
+{
+  "name": "savtale",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talkohen/savtaleFinal.git"
+  },
+  "author": "mark and tal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talkohen/savtaleFinal/issues"
+  },
+  "homepage": "https://github.com/talkohen/savtaleFinal#readme"
+}

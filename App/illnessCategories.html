@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html ng-app= "illnessCatApp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/cold.ico">
+    <link rel = "stylesheet" type = "text/css" href= "css/style.css">
+    <link rel="stylesheet" type="text/css" href="js/slick-1.6.0/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="js/slick-1.6.0/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <title>סבתאלה</title>
+</head>
+<body ng-controller = 'illnessCatCtrl'>
+    
+            <section id ="topBar">
+                <section id= "hamburgerMenu">
+                    <button class="hamburger">&#9776;</button>
+                    <button class="cross">&#735;</button>
+                    <h1>סבתאלה</h1>
+                     <a href="search.html"><div id ="searchIcon"></div></a>
+                    <div class="menu">
+                        <ul>
+                            <a href="myOrders.html"><li>ההזמנות שלי</li></a>
+                            <a href="illnessCategories.html"> <li>סוגי מחלות</li></a>
+                            <a href="index.html"><span><li><span>סבתא ממליצה</span></li></span></a>
+                        </ul>
+                    </div> 
+                </section>
+            </section>
+
+    <section id ="illnesses" >
+        <section id="illness"  ng-repeat = "illness in illnesses">
+                
+        <a href="illness.html?id={{illness._id}}">
+                <section id="illnessTitle">
+            {{illness.name}}
+        </section>
+        <section id="illnessImage" style=" background-image: url({{illness.url}});">
+
+        </section>
+</a>
+        </section>
+    </section>
+            <script src="js/slick-1.6.0/slickslick.min.js"></script>
+            <script src = "js/lib/angular/angular.min.js"></script>
+            <script src= "js/illnessCategories.js"></script>
+            <script src= "js/hamburger.js"></script>
+</body>
+</html>
